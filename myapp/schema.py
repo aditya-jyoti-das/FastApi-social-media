@@ -16,7 +16,8 @@ class userOut(BaseModel):
     id: int 
     email: EmailStr
     class Config:
-        orm_mode=True
+        
+        from_attributes = True
 
 
 class CreatePost(PostBase):
@@ -29,7 +30,7 @@ class Posts(PostBase):
     owner_id:int
     owner: userOut
     class Config:
-        orm_mode=True
+        from_attributes=True
 
 class PostOut(BaseModel):
     Posts:Posts
